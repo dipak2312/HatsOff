@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bdyimage"
+           />
+
+        <Button
+            android:id="@+id/btn_thanks"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Thanks"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/corner_button"
+            android:layout_marginBottom="40dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

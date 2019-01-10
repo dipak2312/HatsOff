@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">51dp</dimen>
+
+
+    <dimen name="sp_150">150.0dp</dimen>
+
+    <dimen name="default_text_size">16.0sp</dimen>
+    <dimen name="text_size10">10.0sp</dimen>
+    <dimen name="text_size5">5.0sp</dimen>
+    <dimen name="text_size8">8.0sp</dimen>
+    <dimen name="text_size12">12.0sp</dimen>
+    <dimen name="text_size13">13.0sp</dimen>
+    <dimen name="text_size14">14.0sp</dimen>
+    <dimen name="text_size17">17.5sp</dimen>
+    <dimen name="text_size16">16.0sp</dimen>
+
+    <dimen name="text_size18">18.0sp</dimen>
+    <dimen name="text_size20">20.0sp</dimen>
+    <dimen name="text_size22">22.0sp</dimen>
+    <dimen name="text_size25">25.0sp</dimen>
+    <dimen name="text_size72">72.0sp</dimen>
+    <dimen name="welcome_screen_default_padding">16.0dp</dimen>
+    <dimen name="padding_2">2.0dp</dimen>
+    <dimen name="padding_5">5.0dp</dimen>
+    <dimen name="padding_12">12.0dp</dimen>
+    <dimen name="padding_15">15.0dp</dimen>
+    <dimen name="padding_10">10.0dp</dimen>
+    <dimen name="padding_20">20.0dp</dimen>
+    <dimen name="padding_25">25.0dp</dimen>
+    <dimen name="padding_30">30.0dp</dimen>
+    <dimen name="padding_8">8.0dp</dimen>
+    <dimen name="editText_default_padding">10.0dp</dimen>
+    <dimen name="margin_5">5.0dp</dimen>
+    <dimen name="margin_8">8.0dp</dimen>
+    <dimen name="margin_6">6.0dp</dimen>
+    <dimen name="margin_20">20.0dp</dimen>
+    <dimen name="margin_18">18.0dp</dimen>
+    <dimen name="margin_17">17.0dp</dimen>
+    <dimen name="margin_22">22.0dp</dimen>
+    <dimen name="margin_25">25.0dp</dimen>
+    <dimen name="margin_30">30.0dp</dimen>
+    <dimen name="margin_33">33.0dp</dimen>
+    <dimen name="margin_40">40.0dp</dimen>
+    <dimen name="margin_45">45.0dp</dimen>
+    <dimen name="margin_44">44.0dp</dimen>
+    <dimen name="margin_90">90.0dp</dimen>
+    <dimen name="margin_80">80.0dp</dimen>
+    <dimen name="margin_172">172.0dp</dimen>
+    <dimen name="margin_160">160.0dp</dimen>
+    <dimen name="margin_35">35.0dp</dimen>
+    <dimen name="margin_15">15.0dp</dimen>
+    <dimen name="margin_10">10.0dp</dimen>
+    <dimen name="margin_3">3.0dp</dimen>
+    <dimen name="ed_height">44.0dp</dimen>
+    <dimen name="margin_50">50.0dp</dimen>
+    <dimen name="margin_60">60.0dp</dimen>
+    <dimen name="cir_tv">45.0dp</dimen>
+    <dimen name="wel_button">150.0dp</dimen>
+    <dimen name="dash_ds_hiegt">50.0dp</dimen>
+
+
+    <dimen name="appbar_padding_top">8.0dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    ed_left_right_margin
+    <dimen name="ed_hmt_margin_30">30.0dp</dimen>
+    <dimen name="ed_hmt_height">44.0dp</dimen>
+    <dimen name="btn_hmt_height">48.0dp</dimen>
+
+    //foot icon
+    <dimen name="img_foot_width">120.0dp</dimen>
+    <dimen name="img_foot_height">230.0dp</dimen>
+
+
+    /// screen height width
+    <dimen name="dueDateBg_women_width">190dp</dimen>
+    <dimen name="devider_women_rightMargin">150dp</dimen>
+    <dimen name="menu_sizeOf_myBaby_btn">110dp</dimen>
+    <dimen name="menu_sizeOf_70_btn">70dp</dimen>
+    <dimen name="menu_sizeOf_80_btn">80dp</dimen>
+    <dimen name="menu_sizeOf_90_btn">90dp</dimen>
+    <dimen name="menu_sizeOf_100_btn">100dp</dimen>
+    <dimen name="menu_margin_14">14dp</dimen>
+    <dimen name="menu_margin_8">8dp</dimen>
+    <dimen name="menu_margin_22">22dp</dimen>
+
+
+    ///dashboard single calender
+    <dimen name="single_cal_height">90dp</dimen>
+    <dimen name="single_cal_text_size">16sp</dimen>
+    <dimen name="single_cal_date_size">25sp</dimen>
+    <dimen name="dash_menu_ll_width">30dp</dimen>
+    <dimen name="dash_menu_ll_heigth">50sp</dimen>
+
+    //dash
+    <dimen name="_dash_top_img_height">200dp</dimen>
+
+    <dimen name="toolbar_size">50dp</dimen>
+
+
+
+    /////menu activity
+    <dimen name="menu_icon_width">67dp</dimen>
+    <dimen name="menu_icon_height">67dp</dimen>
+
+    <dimen name="diary_img_height">200dp</dimen>
+
+
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Attendence.AttendenceActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/attend_logo"
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baground1"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5">
+
+
+        <ImageView
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:src="@drawable/howhite"
+        android:layout_centerHorizontal="true"/>
+
+
+        <ImageView
+        android:id="@+id/img_attend_toggel"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_20"
+        android:src="@drawable/toggel"/>
+
+        <ImageView
+        android:id="@+id/img_back_attend"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:src="@drawable/backblack"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+        android:id="@+id/lin_attendence"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/corner_white"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/top_bar">
+
+
+            <TextView
+                android:id="@+id/abc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/youngserifregular"
+                android:text="Attendance"
+                android:textAllCaps="false" />
+
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_toLeftOf="@+id/main_text"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="right"-->
+        <!--android:layout_weight="0.4">-->
+        <!--<ImageView-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:src="@drawable/attend"-->
+        <!--android:layout_marginRight="@dimen/margin_5" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/main_text"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_weight="0.6">-->
+        <!--<TextView-->
+        <!--android:id="@+id/abc"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@color/white"-->
+         <!--android:fontFamily="@font/youngserifregular"-->
+        <!--android:text="Attendance"-->
+        <!--android:textAllCaps="false" />-->
+
+        <!--</LinearLayout>-->
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+        android:id="@+id/text_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lin_attendence"
+        android:layout_marginTop="@dimen/margin_15">
+
+        <TextView
+        android:id="@+id/attend_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="@dimen/text_size14"
+        android:text="Saturday,29 September,18"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_date"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/img_inst"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/notiicon"
+                android:layout_marginRight="@dimen/margin_30"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin_scan"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/corner_button"
+        android:layout_marginTop="@dimen/margin_80"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/attend_logo">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Scan Now"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:fontFamily="@font/youngserifregular"
+            android:textSize="@dimen/text_size14"
+            android:textAllCaps="false" />
+
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_toLeftOf="@+id/main_text"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="right"-->
+            <!--android:layout_weight="0.3">-->
+            <!--<ImageView-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:src="@drawable/checkwhite"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.7">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:text="Scan Now"-->
+                <!--android:layout_marginLeft="@dimen/margin_10"-->
+                <!--android:fontFamily="@font/youngserifregular"-->
+                <!--android:textSize="@dimen/text_size14"-->
+                <!--android:textAllCaps="false" />-->
+
+        <!--</LinearLayout>-->
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin_attendec"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/corner_button"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/lin_scan">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Check Your Attendance"
+            android:textSize="@dimen/text_size14"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:fontFamily="@font/youngserifregular"
+            android:textAllCaps="false" />
+
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_toLeftOf="@+id/main_text"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="right"-->
+            <!--android:layout_weight="0.3">-->
+            <!--<ImageView-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:src="@drawable/scanwhite"-->
+               <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.7">-->
+            <!--<TextView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:text="Check Your Attendance"-->
+                <!--android:textSize="@dimen/text_size14"-->
+                <!--android:layout_marginLeft="@dimen/margin_10"-->
+                <!--android:fontFamily="@font/youngserifregular"-->
+                <!--android:textAllCaps="false" />-->
+
+        <!--</LinearLayout>-->
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Leave.LeaveHomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/attend_logo"
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baground1"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5">
+
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:src="@drawable/howhite"
+                android:layout_centerHorizontal="true"/>
+
+
+            <ImageView
+                android:id="@+id/img_Leave_setting"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_20"
+                android:src="@drawable/toggel"/>
+
+            <ImageView
+                android:id="@+id/img_leave_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:src="@drawable/backblack"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/lin_attendence"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/corner_white"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_marginRight="@dimen/margin_30"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@+id/top_bar">
+
+
+            <TextView
+                android:id="@+id/abc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/youngserifregular"
+                android:text="Leave Tracker"
+                android:textAllCaps="false" />
+
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_toLeftOf="@+id/main_text"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="right"-->
+                <!--android:layout_weight="0.4">-->
+                <!--<ImageView-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:src="@drawable/attend"-->
+                    <!--android:layout_marginRight="@dimen/margin_5" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/main_text"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_weight="0.6">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/abc"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:fontFamily="@font/youngserifregular"-->
+                    <!--android:text="Leave Tracker"-->
+                    <!--android:textAllCaps="false" />-->
+
+            <!--</LinearLayout>-->
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/text_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_attendence"
+            android:layout_marginTop="@dimen/margin_15">
+
+            <TextView
+                android:id="@+id/leave_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserratregular"
+                android:textSize="@dimen/text_size14"
+                android:text="Saturday,29 September,18"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_date"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical"
+                android:layout_weight="0.5">
+                <TextView
+                    android:id="@+id/text_el_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/montserratregular"
+                    android:textSize="@dimen/text_size16"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EL Available"
+                    android:fontFamily="@font/montserratregular"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/white"
+                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Available"-->
+                    <!--android:fontFamily="@font/montserratregular"-->
+                    <!--android:textSize="@dimen/text_size14"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_pl_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_size16"
+                    android:fontFamily="@font/montserratregular"
+                    android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PL Available"
+                    android:fontFamily="@font/montserratregular"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/white" />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Available"-->
+                    <!--android:fontFamily="@font/montserratregular"-->
+                    <!--android:textSize="@dimen/text_size14"-->
+                    <!--android:textColor="@color/white" />-->
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_apply_leave"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/corner_button"
+        android:layout_marginTop="@dimen/margin_80"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_below="@+id/attend_logo">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size16"
+        android:fontFamily="@font/youngserifregular"
+        android:text="Apply For Leaves"
+        />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_history_leave"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/corner_button"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_below="@+id/rel_apply_leave">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size16"
+            android:fontFamily="@font/youngserifregular"
+            android:text="Check History"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

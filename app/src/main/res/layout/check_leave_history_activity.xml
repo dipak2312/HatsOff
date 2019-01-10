@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:layout_marginRight="@dimen/margin_10"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="@dimen/margin_5"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <LinearLayout
+        android:id="@+id/lin_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_10"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            android:layout_margin="7dp"
+            android:layout_weight="0.45">
+            <TextView
+                android:id="@+id/txt_leave_from_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratregular"
+                android:text=""
+                android:textSize="12dp"
+                android:textColor="@color/HOBlue"
+                android:layout_gravity="center"
+               />
+
+
+        </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_weight="0.1">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/HOBlue"
+                android:textSize="@dimen/margin_30"
+                android:text="-"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            android:layout_margin="7dp"
+            android:layout_weight="0.45">
+
+            <TextView
+                android:id="@+id/txt_leave_to_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratregular"
+                android:text=""
+                android:textSize="12dp"
+                android:textColor="@color/HOBlue"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_radio_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_below="@+id/lin_date"
+        android:layout_marginTop="@dimen/margin_5"
+        >
+
+
+        <RadioButton
+            android:id="@+id/radio_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size12"
+           android:layout_centerInParent="true"
+            android:buttonTint="@color/HOBlue"
+            android:textColor="@color/HOBlue"
+            android:checked="true"
+            android:text=""/>
+
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/histroy_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_radio_button"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp">
+     <TextView
+         android:id="@+id/text_resone"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="12dp"
+         android:textColor="@color/HOBlue"
+         android:text="  "/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/histroy_text"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginLeft="18dp"
+
+            android:layout_marginRight="@dimen/margin_8">
+
+
+            <android.support.v7.widget.CardView
+
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_margin="7dp"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/text_leave_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:fontFamily="@font/montserratregular"
+                    android:text=""/>
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                >
+
+                <TextView
+                    android:id="@+id/text_current_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:fontFamily="@font/montserratregular"
+                    android:text=""/>
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_baground_color"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_margin="7dp"
+                app:cardBackgroundColor="@color/green"
+                android:layout_alignParentRight="true"
+                >
+
+                <TextView
+                    android:id="@+id/text_leave_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+
+                    android:fontFamily="@font/montserratregular"
+                    android:text=""/>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

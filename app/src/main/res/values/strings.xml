@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hats-Off</string>
+
+    <string name="default_notification_channel_id">my_channel_01</string>
+
+    <string name="app_images_folderName">Hats-Off</string>
+</resources>

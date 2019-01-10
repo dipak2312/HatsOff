@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Activity.Landing.LoginActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/getotp_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Contact Admin For The OTP"
+            android:textStyle="bold"
+            android:textColor="@color/HOBlue"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+
+          <RelativeLayout
+                android:id="@+id/getotp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_above="@+id/getotp_text"
+                android:layout_marginBottom="@dimen/margin_20"
+               >
+
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/corner_button"
+                    />
+
+            </RelativeLayout>
+
+
+    <RelativeLayout
+    android:id="@+id/emp_otp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_above="@+id/getotp"
+   android:layout_marginBottom="@dimen/margin_30">
+
+
+    <EditText
+    android:id="@+id/edit_emp_otp"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_marginLeft="@dimen/margin_30"
+    android:layout_marginRight="@dimen/margin_30"
+    android:hint="OTP"
+    android:inputType="textCapCharacters"
+    android:gravity="center"
+    android:background="@drawable/corner_edit_text" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+    android:id="@+id/emp_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_above="@+id/emp_otp"
+   android:layout_marginBottom="@dimen/margin_10">
+
+
+    <EditText
+    android:id="@+id/edit_emp_id"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_marginLeft="@dimen/margin_30"
+    android:layout_marginRight="@dimen/margin_30"
+    android:hint="Employee ID"
+    android:inputType="textCapCharacters"
+    android:gravity="center"
+    android:maxLength="8"
+    android:background="@drawable/corner_edit_text" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/logo"
+        android:layout_above="@+id/emp_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_40">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baground_img"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="80dp"
+            android:src="@drawable/howhite"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

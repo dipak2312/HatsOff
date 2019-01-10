@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "752191371173",
+    "firebase_url": "https://hats-off-77b86.firebaseio.com",
+    "project_id": "hats-off-77b86",
+    "storage_bucket": "hats-off-77b86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752191371173:android:4391e6180aa49d56",
+        "android_client_info": {
+          "package_name": "com.hatsoffdigital.hatsoff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752191371173-sj3n9horpbfg72vu8qc2d2let18ogv0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIbNIE0bWHzqBD6uGvEdyBQWAvXlc40gk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
