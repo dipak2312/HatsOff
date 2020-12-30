@@ -1,11 +1,12 @@
 package com.hatsoffdigital.hatsoff.Utils;
 
 import android.app.Activity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+
 public class ImagePickUtils {
 
     private static final int REQUEST_CAMERA = 123;
@@ -27,7 +31,7 @@ public class ImagePickUtils {
 
     public static void selectImage(final Context context) {
 
-        android.support.v7.app.AlertDialog.Builder dialogBuilder = new android.support.v7.app.AlertDialog.Builder(context);
+       AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
         final View dialogView = inflater.inflate(R.layout.select_image_dialog_layout, null);
         dialogBuilder.setView(dialogView);
@@ -37,7 +41,7 @@ public class ImagePickUtils {
         Button gallery = (Button) dialogView.findViewById(R.id.select_image_dialog_btn_gallery_btn);
         Button btnCancel = (Button) dialogView.findViewById(R.id.select_image_dialog_close_btn);
 
-        final android.support.v7.app.AlertDialog b = dialogBuilder.create();
+        final AlertDialog b = dialogBuilder.create();
         b.show();
 
 

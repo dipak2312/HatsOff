@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size20"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="Scan Unsuccessful." />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel_txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_below="@+id/rel_txt1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size16"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="Scan timings are 10:30AM to 12PM." />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel_txt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size16"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="Thank You!!" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt3"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="@dimen/margin_20">
+
+        <Button
+            android:id="@+id/early_btn_okay"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Okay"
+            android:textSize="@dimen/text_size16"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/corner_button" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

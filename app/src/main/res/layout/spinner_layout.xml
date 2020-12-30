@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/spinnerTarget"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/HOBlue"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:layout_marginLeft="@dimen/margin_20"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14sp" />
+
+</RelativeLayout>

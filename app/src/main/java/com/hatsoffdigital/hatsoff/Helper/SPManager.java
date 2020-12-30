@@ -18,9 +18,19 @@ public class SPManager {
     public static final String EXPERIENCE = "experience";
     public static final String AVERAGE = "average";
     public static final String BDAYSCREEN = "bday";
-
     public static final String ELAVAILABLE = "el";
     public static final String PLAVAILABLE = "pl";
+    public static final String HOFACTDATE = "hofactdate";
+    public static final String USERFULLNAME = "userfullname";
+    public static final String HOLIDAYREMINDER = "holidayreminder";
+    public static final String WFHAPPLIEDSIZE = "holidayreminder";
+    public static final String TOTALMETTINGS = "totalmettings";
+    public static final String ABOVENINRHRS = "aboveninehrs";
+    public static final String BELOWNINEHRS = "belowninehrs";
+    public static final String AVERAGESTATUS = "averagestatus";
+    public static final String INVOICETOTALSIZE = "invoicetotal";
+    public static final String INVOICEPENDINGSIZE = "invoicepending";
+    public static final String INVOICEAPPROVED = "invoiceapproved";
 
 
     int PRIVATE_MODE = 0;
@@ -33,14 +43,23 @@ public class SPManager {
     String total_experience;
     String Profile_Image;
     String Average_time;
-
     String EL_Available;
     String PL_Available;
-
+    String HO_Fact_Date;
     String Bday_Check;
+    String user_full_name;
     Context context;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
+    String holiday_reminder;
+    String wfh_applied_size;
+    String total_mettings;
+    String above_nine_hrs;
+    String below_nine_hrs;
+    String average_status;
+    String invoice_total;
+    String invoice_pending;
+    String invoice_approved;
 
 
     public SPManager(Context context) {
@@ -194,6 +213,119 @@ public class SPManager {
 
     public void setAverage_time(String average_time) {
         editor.putString(AVERAGE, average_time);
+        editor.commit();
+    }
+
+
+    public String getHO_Fact_Date() {
+        HO_Fact_Date = pref.getString(HOFACTDATE, " ");
+        return HO_Fact_Date;
+    }
+
+    public void setHO_Fact_Date(String HO_Fact_Date) {
+        editor.putString(HOFACTDATE, HO_Fact_Date);
+        editor.commit();
+    }
+
+    public String getTotal_mettings() {
+        total_mettings = pref.getString(TOTALMETTINGS, " ");
+        return total_mettings;
+    }
+
+    public void setTotal_mettings(String total_mettings) {
+        editor.putString(TOTALMETTINGS, total_mettings);
+        editor.commit();
+    }
+
+    public String getUser_full_name() {
+        user_full_name = pref.getString(USERFULLNAME, " ");
+        return user_full_name;
+    }
+
+    public void setUser_full_name(String user_full_name) {
+        editor.putString(USERFULLNAME, user_full_name);
+        editor.commit();
+    }
+
+    public String getWfh_applied_size() {
+        wfh_applied_size = pref.getString(WFHAPPLIEDSIZE, " ");
+        return wfh_applied_size;
+    }
+
+    public void setWfh_applied_size(String wfh_applied_size) {
+        editor.putString(WFHAPPLIEDSIZE, wfh_applied_size);
+        editor.commit();
+    }
+
+    public String getHoliday_reminder() {
+        holiday_reminder = pref.getString(HOLIDAYREMINDER, " ");
+        return holiday_reminder;
+    }
+
+    public void setHoliday_reminder(String holiday_reminder) {
+        editor.putString(HOLIDAYREMINDER, holiday_reminder);
+        editor.commit();
+    }
+
+    public String getAbove_nine_hrs() {
+        above_nine_hrs = pref.getString(ABOVENINRHRS, " ");
+        return above_nine_hrs;
+    }
+
+    public void setAbove_nine_hrs(String above_nine_hrs) {
+        editor.putString(ABOVENINRHRS, above_nine_hrs);
+        editor.commit();
+    }
+
+    public String getBelow_nine_hrs() {
+        below_nine_hrs = pref.getString(BELOWNINEHRS, " ");
+        return below_nine_hrs;
+    }
+
+    public void setBelow_nine_hrs(String below_nine_hrs) {
+        editor.putString(BELOWNINEHRS, below_nine_hrs);
+        editor.commit();
+    }
+
+
+    public String getAverage_status() {
+        average_status = pref.getString(AVERAGESTATUS, " ");
+        return average_status;
+    }
+
+    public void setAverage_status(String average_status) {
+        editor.putString(AVERAGESTATUS, average_status);
+        editor.commit();
+    }
+
+
+    public String getInvoice_total() {
+        invoice_total = pref.getString(INVOICETOTALSIZE, " ");
+        return invoice_total;
+    }
+
+    public void setInvoice_total(String invoice_total) {
+        editor.putString(INVOICETOTALSIZE, invoice_total);
+        editor.commit();
+    }
+
+    public String getInvoice_pending() {
+        invoice_pending = pref.getString(INVOICEPENDINGSIZE, " ");
+        return invoice_pending;
+    }
+
+    public void setInvoice_pending(String invoice_pending) {
+        editor.putString(INVOICEPENDINGSIZE, invoice_pending);
+        editor.commit();
+    }
+
+    public String getInvoice_approved() {
+        invoice_approved = pref.getString(INVOICEAPPROVED, " ");
+        return invoice_approved;
+    }
+
+    public void setInvoice_approved(String invoice_approved) {
+        editor.putString(INVOICEAPPROVED, invoice_approved);
         editor.commit();
     }
 }

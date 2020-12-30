@@ -11,7 +11,7 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.hatsoffdigital.hatsoff.Activity.Notification.NotificationActivity;
@@ -20,7 +20,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MyFirebaseMessagingService extends FirebaseMessagingService{
+import androidx.core.app.NotificationCompat;
+
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     NotificationChannel mChannel;
     Bitmap bitmap;
@@ -33,36 +35,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
 
 
         if (remoteMessage.getData().size() > 0) {
-             img_url=remoteMessage.getData().get("icon");
+            img_url = remoteMessage.getData().get("icon");
 
-            if(!img_url.equals("") ) {
+            if (!img_url.equals("")) {
                 getBitmapfromUrl(img_url);
             }
 
-            createNotification(remoteMessage,bitmap);
-            }
+            createNotification(remoteMessage, bitmap);
+        }
 
-//        Handler handler = new Handler(Looper.getMainLooper());
-//
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//
-//                Toast.makeText(getApplicationContext(), "message recived", Toast.LENGTH_SHORT).show();
-//
-//           }
-//        },100);
-
-       //img_url="https://hatsoffdigital.in/admin_route/upload/5bee5d238a4b8.png";
-
-       //getBitmapfromUrl(img_url);
-
-
-        //createNotification(remoteMessage,bitmap);
-
-    }
-
+   }
 
 
     public Bitmap getBitmapfromUrl(String imageUrl) {
@@ -84,17 +66,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
     }
 
 
-    private void createNotification(RemoteMessage remoteMessage,Bitmap bitmap) {
-
-//        if(remoteMessage.getNotification() !=null)
+    private void createNotification(RemoteMessage remoteMessage, Bitmap bitmap) {
 
 
-//        {
 
         if (bitmap != null) {
             int notifyID = 1;
             String CHANNEL_ID = "my_channel_01";// The id of the channel.
-            String name = "saggi";// The user-visible name of the channel.
+            String name = "HatsOff";// The user-visible name of the channel.
             int importance = NotificationManager.IMPORTANCE_HIGH;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
@@ -114,16 +93,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
                     //.setContentText(remoteMessage.getNotification().getBody())
                     .setChannelId(CHANNEL_ID)
                     .setStyle(new NotificationCompat.BigPictureStyle()
-                            .bigPicture(bitmap))/*Notification with Image*/
+                    .bigPicture(bitmap))/*Notification with Image*/
                     .setColor(getResources().getColor(R.color.HOBlue))
                     .setSound(defaultSoundUri)
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(remoteMessage.getData().get("body")))
                     .setPriority(Notification.PRIORITY_HIGH)
                     .setAutoCancel(true)
                     .setContentIntent(resultIntent);
 
 
-            NotificationManager notificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 notificationManager.createNotificationChannel(mChannel);
@@ -132,12 +111,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
             notificationManager.notify(0, mNotificationBuilder.build());
 
 
-        }
-        else
-        {
+        } else {
             int notifyID = 1;
             String CHANNEL_ID = "my_channel_01";// The id of the channel.
-            String name = "saggi";// The user-visible name of the channel.
+            String name = "HatsOff";// The user-visible name of the channel.
             int importance = NotificationManager.IMPORTANCE_HIGH;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
@@ -176,8 +153,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
     }
 
 
-
-   // }
 
 
 }

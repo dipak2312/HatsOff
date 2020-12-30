@@ -6,6 +6,9 @@ public class AverageTime {
     private String msg;
     private String averageTime;
     private String dateOfBirth;
+    private String aboveNinehrsCount;
+    private String belowNinehrsCount;
+    private String averageStatus;
 
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -37,5 +40,30 @@ public class AverageTime {
 
     public void setAverageTime(String averageTime) {
         this.averageTime = averageTime;
+    }
+
+    public String getAboveNinehrsCount() {
+        return aboveNinehrsCount;
+    }
+
+    public void setAboveNinehrsCount(String aboveNinehrsCount) {
+        this.aboveNinehrsCount = aboveNinehrsCount;
+    }
+
+    public String getBelowNinehrsCount() {
+        return belowNinehrsCount;
+    }
+
+    public void setBelowNinehrsCount(String belowNinehrsCount) {
+        this.belowNinehrsCount = belowNinehrsCount;
+    }
+
+
+    public String getAverageStatus() {
+        return averageStatus;
+    }
+
+    public void setAverageStatus(String averageStatus) {
+        this.averageStatus = averageStatus;
     }
 }

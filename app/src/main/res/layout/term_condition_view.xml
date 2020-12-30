@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rel_add_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="@dimen/margin_20"
+        android:animateLayoutChanges="true"
+        android:layout_marginRight="@dimen/margin_20"
+
+        android:layout_marginBottom="15dp"
+
+        android:background="@drawable/simple_border">
+
+        <RelativeLayout
+            android:id="@+id/rel_termcond_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/txt_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:fontFamily="@font/montserratregular"
+                android:text=""
+                android:textColor="@color/HOBlue"
+                android:textSize="@dimen/text_size14" />
+
+            <RelativeLayout
+                android:id="@+id/rel_plus"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/txt_termcond_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="+"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size18" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_hide_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="false"
+
+            android:layout_below="@+id/rel_termcond_title"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="Go to the app’s listing on the Play Store. You can either search for the app you want to rate from the installed drawer in the Play Store or use a link within the app (most apps have requests from the developers asking you to rate them).Some people claim that an adapter is used only when referring to a person, while adaptor is used only when referring to electronic or other mechanical devices. ... They go on to say that the spelling adapter is three times more common for both meanings.https://writingexplained.org › adapter-vs-adaptor-differenc "
+                android:textColor="@color/HOBlue"
+                android:textSize="@dimen/text_size12" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

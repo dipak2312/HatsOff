@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rel_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            android:id="@+id/holiday_popup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+
+        <Button
+            android:id="@+id/btn_thanks"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Thanks"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/corner_button"
+            android:layout_marginBottom="40dp"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/HOBlue" />
+
+        <TextView
+            android:id="@+id/progress_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading please wait......"
+            android:layout_below="@+id/progress_bar"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/HOBlue"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

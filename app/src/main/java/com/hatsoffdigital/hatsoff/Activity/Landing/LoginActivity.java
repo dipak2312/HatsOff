@@ -3,19 +3,26 @@ package com.hatsoffdigital.hatsoff.Activity.Landing;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.hatsoffdigital.hatsoff.Activity.Profile.UpdateProfileActivity;
 import com.hatsoffdigital.hatsoff.Activity.home.HomeScreenActivity;
 import com.hatsoffdigital.hatsoff.Helper.SPManager;
 import com.hatsoffdigital.hatsoff.Models.CheckEmployeeId;
 import com.hatsoffdigital.hatsoff.R;
 import com.hatsoffdigital.hatsoff.Retrofit.WebServiceModel;
+import com.hatsoffdigital.hatsoff.Utils.CheckInternetBroadcast;
 import com.hatsoffdigital.hatsoff.Utils.CustomProgressDialog;
 import com.hatsoffdigital.hatsoff.Utils.NetworkPopup;
+import com.hatsoffdigital.hatsoff.Utils.ServerPopup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
@@ -29,6 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     String Otp;
     CustomProgressDialog dialog;
     SPManager spManager;
+    TextView txt_contact;
 
 
     @Override
@@ -51,7 +59,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         employee_id = getIntent().getStringExtra("employeeid");
         Otp = getIntent().getStringExtra("Otp");
         spManager.setOtp(Otp);
+
+       // Toast.makeText(context,Otp,Toast.LENGTH_SHORT).show();
         edit_emp_id.setText(employee_id);
+
+        txt_contact = (TextView) findViewById(R.id.txt_contact);
+
+        String mystring = "Please Contact Admin For The OTP";
+        SpannableString content = new SpannableString(mystring);
+        content.setSpan(new UnderlineSpan(), 0, mystring.length(), 0);
+        txt_contact.setText(content);
+
+       // Toast.makeText(context,spManager.getOtp(),Toast.LENGTH_SHORT).show();
 
     }
 
@@ -102,7 +121,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             spManager.setName(user_name);
                             spManager.setEmployee_id(emp_id);
                             spManager.setLoggedIn("Login");
-                            Intent intent = new Intent(context, HomeScreenActivity.class);
+                            Intent intent = new Intent(context, UpdateProfileActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                            intent.putExtra("LoginScreen","Login");
                             startActivity(intent);
                             finish();
                         }
@@ -111,8 +132,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     @Override
                     public void onError(Throwable e) {
-                        dialog.dismiss(" ");
-                        NetworkPopup.ShowPopup(context);
+//                        dialog.dismiss(" ");
+//                        NetworkPopup.ShowPopup(context);
+
+                        if(CheckInternetBroadcast.isNetworkAvilable(context))
+                        {
+                            ServerPopup.showPopup(context);
+                            dialog.dismiss(" ");
+                        }
+                        else
+                        {
+                            NetworkPopup.ShowPopup(context);
+                            dialog.dismiss(" ");
+
+                        }
+
                         //Toast.makeText(context,"Please Check Your Network..Unable to Connect Server!!",Toast.LENGTH_SHORT).show();
 
 

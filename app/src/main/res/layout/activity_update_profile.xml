@@ -1,146 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.Profile.UpdateProfileActivity">
 
+
     <RelativeLayout
-       android:id="@+id/rel_update_profile"
-       android:layout_width="match_parent"
-       android:layout_height="200dp">
-
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/baground1"
-           android:scaleType="fitXY"/>
-
-       <RelativeLayout
-           android:id="@+id/top_bar"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="@dimen/margin_5">
-
-
-           <ImageView
-               android:layout_width="125dp"
-               android:layout_height="50dp"
-               android:src="@drawable/howhite"
-               android:layout_centerHorizontal="true"/>
-
-
-           <ImageView
-               android:id="@+id/img_attend_toggel"
-               android:layout_width="25dp"
-               android:layout_height="25dp"
-               android:layout_alignParentRight="true"
-               android:layout_centerVertical="true"
-               android:layout_marginRight="@dimen/margin_20"
-               android:src="@drawable/toggel"/>
-
-           <ImageView
-               android:id="@+id/profile_back_img"
-               android:layout_width="25dp"
-               android:layout_height="25dp"
-               android:layout_centerVertical="true"
-               android:layout_marginLeft="@dimen/margin_20"
-               android:src="@drawable/backblack"/>
-
-       </RelativeLayout>
-
-
-
-       <LinearLayout
-           android:id="@+id/lin_attendence"
-           android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:background="@drawable/corner_white"
-           android:layout_marginTop="@dimen/margin_15"
-           android:layout_marginLeft="@dimen/margin_30"
-           android:layout_marginRight="@dimen/margin_30"
-           android:orientation="horizontal"
-          android:gravity="center"
-           android:layout_below="@+id/top_bar">
-
-
-           <TextView
-               android:id="@+id/abc"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:textColor="@color/white"
-               android:fontFamily="@font/youngserifregular"
-               android:text="Update Your Profile"
-               android:textAllCaps="false" />
-
-
-
-           <!--<LinearLayout-->
-               <!--android:layout_width="0dp"-->
-               <!--android:layout_height="wrap_content"-->
-               <!--android:layout_centerVertical="true"-->
-               <!--android:layout_toLeftOf="@+id/main_text"-->
-               <!--android:layout_gravity="center"-->
-               <!--android:gravity="right"-->
-               <!--android:layout_weight="0.4">-->
-               <!--<ImageView-->
-                   <!--android:layout_width="20dp"-->
-                   <!--android:layout_height="20dp"-->
-                   <!--android:src="@drawable/profile"-->
-                   <!--android:layout_marginRight="@dimen/margin_5" />-->
-           <!--</LinearLayout>-->
-
-           <!--<LinearLayout-->
-               <!--android:id="@+id/main_text"-->
-               <!--android:layout_width="0dp"-->
-               <!--android:layout_height="wrap_content"-->
-               <!--android:layout_gravity="center"-->
-               <!--android:layout_weight="0.6">-->
-               <!--<TextView-->
-                   <!--android:id="@+id/abc"-->
-                   <!--android:layout_width="wrap_content"-->
-                   <!--android:layout_height="wrap_content"-->
-                   <!--android:textColor="@color/white"-->
-                   <!--android:fontFamily="@font/youngserifregular"-->
-                   <!--android:text="Update Your Profile"-->
-                   <!--android:textAllCaps="false" />-->
-
-           <!--</LinearLayout>-->
-
-
-
-       </LinearLayout>
-
-
-       <RelativeLayout
-           android:id="@+id/text_date"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_below="@+id/lin_attendence"
-           android:layout_marginTop="@dimen/margin_15">
-
-           <TextView
-               android:id="@+id/update_date"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_centerHorizontal="true"
-               android:textColor="@color/white"
-               android:fontFamily="@font/montserratregular"
-               android:textSize="@dimen/text_size14"
-               android:text="Saturday,29 September,18"/>
-
-       </RelativeLayout>
-
-
-   </RelativeLayout>
-
-
-    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rel_update_profile">
+        android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/homebaground"/>
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logowhite" />
+
+        <RelativeLayout
+            android:id="@+id/rel_profile_toggel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/margin_10">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/toggel" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -148,352 +55,411 @@
 
 
             <RelativeLayout
-                android:id="@+id/rel_profile_icon"
+                android:id="@+id/rel_color_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_20">
+                android:layout_marginTop="@dimen/margin_90"
+                android:background="@drawable/corner_white_home">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circle_profile_img"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerHorizontal="true"
-                    app:civ_border_width="1dp"
-                    app:civ_border_color="@color/HOBlue"
-                    android:src="@drawable/user_info"/>
-
-                <TextView
-                    android:id="@+id/text_plus"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/rel_profile_icon"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/margin_30"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/HOBlue"
-                    android:text="+"/>
+                    android:layout_marginTop="@dimen/margin_30">
 
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circle_profile_img"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/user_info"
+                        app:civ_border_color="@color/HOBlue"
+                        app:civ_border_width="1dp" />
+
+                    <TextView
+                        android:id="@+id/text_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="+"
+                        android:textColor="@color/HOBlue"
+                        android:textSize="@dimen/margin_30" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_fullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_profile_icon"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_firstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="First Name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_fullname"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_lastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Last Name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_emp_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/rel_email"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/corner_edit_text">
+
+
+                    <TextView
+                        android:id="@+id/text_emp_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="HO28"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_emp_no"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+
+                    <EditText
+                        android:id="@+id/edit_mobileno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Mobile Number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_bdy_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_mobile_no"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <TextView
+                        android:id="@+id/edit_bdydate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_20"
+                        android:drawableRight="@mipmap/dateicon"
+                        android:hint="Birthday Date"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_join_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_bdy_date"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <TextView
+                        android:id="@+id/edit_joindate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableRight="@mipmap/dateicon"
+                        android:hint="Joining Date"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14"
+
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_email_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_join_date"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Email Id"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/rel_upload_ic"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_below="@+id/rel_email_id"-->
+                <!--android:layout_marginLeft="@dimen/margin_30"-->
+                <!--android:layout_marginRight="@dimen/margin_30"-->
+                <!--android:background="@drawable/rounded_attend_shadow"-->
+                <!--android:layout_marginTop="@dimen/margin_15">-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/text_uploadpic"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Your Photo"-->
+                <!--android:textColorHint="@color/HOBlue"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:drawableRight="@mipmap/uploadprofile"-->
+                <!--android:layout_marginRight="@dimen/margin_20"-->
+                <!--android:textColor="@color/HOBlue"-->
+                <!--android:textSize="@dimen/text_size14"-->
+                <!--android:maxLines="1"-->
+
+                <!--android:layout_centerVertical="true"-->
+                <!--/>-->
+
+
+                <!--</RelativeLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/rel_blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_email_id"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_bloodgroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Blood Group"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_blood_group"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Address"
+                        android:inputType="textCapSentences"
+                        android:maxLines="3"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_pan"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_address"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_pan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Pan Card No"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_adhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/rel_pan"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:background="@drawable/rounded_attend_shadow">
+
+                    <EditText
+                        android:id="@+id/edit_adhar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/margin_15"
+                        android:background="@null"
+                        android:hint="Aadhar Card No"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/HOBlue"
+                        android:textColorHint="@color/HOBlue"
+                        android:textSize="@dimen/text_size14" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_adhar"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_30">
+
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/corner_button"
+                        android:text="Submit"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
 
             </RelativeLayout>
 
-        <RelativeLayout
-        android:id="@+id/rel_fullname"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="@dimen/margin_15"
-            android:layout_below="@+id/rel_profile_icon"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:background="@drawable/rounded_attend_shadow">
-
-        <EditText
-         android:id="@+id/edit_firstname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:textColorHint="@color/HOBlue"
-        android:textColor="@color/HOBlue"
-        android:textSize="@dimen/text_size14"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/margin_15"
-        android:background="@null"
-        android:layout_centerVertical="true"
-            android:maxLines="1"
-        android:inputType="textEmailAddress"/>
-
 
         </RelativeLayout>
 
-    <RelativeLayout
-    android:id="@+id/rel_email"
-    android:layout_width="match_parent"
-    android:layout_height="45dp"
-    android:layout_below="@+id/rel_fullname"
-    android:layout_marginLeft="@dimen/margin_30"
-    android:layout_marginRight="@dimen/margin_30"
-    android:background="@drawable/rounded_attend_shadow"
-    android:layout_marginTop="@dimen/margin_15">
-
-        <EditText
-    android:id="@+id/edit_lastname"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Last Name"
-    android:textColor="@color/HOBlue"
-    android:textSize="@dimen/text_size14"
-    android:textColorHint="@color/HOBlue"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="@dimen/margin_15"
-    android:background="@null"
-    android:layout_centerVertical="true"
-    android:maxLines="1"
-    android:inputType="textEmailAddress"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-    android:id="@+id/rel_emp_no"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_below="@+id/rel_email"
-    android:layout_marginLeft="@dimen/margin_30"
-    android:layout_marginRight="@dimen/margin_30"
-    android:background="@drawable/corner_edit_text"
-    android:layout_marginTop="@dimen/margin_15">
-
-
-    <TextView
-    android:id="@+id/text_emp_id"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="HO28"
-    android:textStyle="bold"
-    android:textColor="@color/HOBlue"
-    android:textSize="@dimen/text_size14"
-    android:textColorHint="@color/HOBlue"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="@dimen/margin_15"
-    android:background="@null"
-    android:layout_centerVertical="true"
-    android:maxLines="1"
-   />
-
-
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-    android:id="@+id/rel_mobile_no"
-    android:layout_width="match_parent"
-    android:layout_height="45dp"
-    android:layout_below="@+id/rel_emp_no"
-    android:layout_marginLeft="@dimen/margin_30"
-    android:layout_marginRight="@dimen/margin_30"
-    android:background="@drawable/rounded_attend_shadow"
-    android:layout_marginTop="@dimen/margin_15">
-
-
-    <EditText
-     android:id="@+id/edit_mobileno"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Mobile Number"
-    android:textColorHint="@color/HOBlue"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="@dimen/margin_15"
-    android:textColor="@color/HOBlue"
-    android:textSize="@dimen/text_size14"
-    android:maxLength="10"
-    android:background="@null"
-    android:layout_centerVertical="true"
-    android:inputType="phone"/>
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-    android:id="@+id/rel_bdy_date"
-    android:layout_width="match_parent"
-    android:layout_height="45dp"
-    android:layout_below="@+id/rel_mobile_no"
-    android:layout_marginLeft="@dimen/margin_30"
-    android:layout_marginRight="@dimen/margin_30"
-    android:background="@drawable/rounded_attend_shadow"
-    android:layout_marginTop="@dimen/margin_15">
-
-     <TextView
-     android:id="@+id/edit_bdydate"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:hint="Birthday Date"
-     android:drawableRight="@mipmap/dateicon"
-     android:textColorHint="@color/HOBlue"
-     android:layout_marginLeft="20dp"
-     android:layout_marginRight="@dimen/margin_20"
-     android:textColor="@color/HOBlue"
-     android:textSize="@dimen/text_size14"
-     android:maxLines="1"
-     android:layout_centerVertical="true"
-   />
-
-
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:id="@+id/rel_join_date"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/rel_bdy_date"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:background="@drawable/rounded_attend_shadow"
-        android:layout_marginTop="@dimen/margin_15">
-
-        <TextView
-            android:id="@+id/edit_joindate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Joining Date"
-            android:textColorHint="@color/HOBlue"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/HOBlue"
-            android:textSize="@dimen/text_size14"
-            android:maxLines="1"
-            android:layout_centerVertical="true"
-            android:drawableRight="@mipmap/dateicon"
-
-            />
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/rel_email_id"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/rel_join_date"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:background="@drawable/rounded_attend_shadow"
-        android:layout_marginTop="@dimen/margin_15">
-
-        <EditText
-            android:id="@+id/edit_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email Id"
-            android:textColorHint="@color/HOBlue"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="@dimen/margin_15"
-            android:textColor="@color/HOBlue"
-            android:textSize="@dimen/text_size14"
-            android:maxLines="1"
-            android:background="@null"
-            android:layout_centerVertical="true"
-            android:inputType="textEmailAddress"/>
-
-
-    </RelativeLayout>
-
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/rel_upload_ic"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="45dp"-->
-        <!--android:layout_below="@+id/rel_email_id"-->
-        <!--android:layout_marginLeft="@dimen/margin_30"-->
-        <!--android:layout_marginRight="@dimen/margin_30"-->
-        <!--android:background="@drawable/rounded_attend_shadow"-->
-        <!--android:layout_marginTop="@dimen/margin_15">-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/text_uploadpic"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Upload Your Photo"-->
-            <!--android:textColorHint="@color/HOBlue"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:drawableRight="@mipmap/uploadprofile"-->
-            <!--android:layout_marginRight="@dimen/margin_20"-->
-            <!--android:textColor="@color/HOBlue"-->
-            <!--android:textSize="@dimen/text_size14"-->
-            <!--android:maxLines="1"-->
-
-            <!--android:layout_centerVertical="true"-->
-           <!--/>-->
-
-
-    <!--</RelativeLayout>-->
-
-    <RelativeLayout
-        android:id="@+id/rel_blood_group"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/rel_email_id"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:background="@drawable/rounded_attend_shadow"
-        android:layout_marginTop="@dimen/margin_15">
-
-        <EditText
-            android:id="@+id/edit_bloodgroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Blood Group"
-            android:textColorHint="@color/HOBlue"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="@dimen/margin_15"
-            android:textColor="@color/HOBlue"
-            android:textSize="@dimen/text_size14"
-            android:maxLines="1"
-            android:background="@null"
-            android:layout_centerVertical="true"
-            android:inputType="textEmailAddress"/>
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/rel_address"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/rel_blood_group"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:background="@drawable/rounded_attend_shadow"
-        android:layout_marginTop="@dimen/margin_15">
-
-        <EditText
-            android:id="@+id/edit_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Address"
-            android:textColorHint="@color/HOBlue"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="@dimen/margin_15"
-            android:textColor="@color/HOBlue"
-            android:textSize="@dimen/text_size14"
-            android:maxLines="3"
-            android:background="@null"
-            android:layout_centerVertical="true"
-            android:inputType="textCapSentences"/>
-
-
-    </RelativeLayout>
-
-
-
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rel_address"
-        android:layout_marginBottom="@dimen/margin_30"
-        android:layout_marginTop="@dimen/margin_20">
-
-
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Submit"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:background="@drawable/corner_button"
-            />
-
-    </RelativeLayout>
-
-
-        </RelativeLayout>
-
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </RelativeLayout>

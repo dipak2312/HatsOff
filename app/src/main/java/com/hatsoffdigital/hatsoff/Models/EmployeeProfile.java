@@ -15,6 +15,8 @@ public class EmployeeProfile {
     private  String permanent_address;
     private  String email_address;
     private  String cellphone_no;
+    private String pan_card;
+    private String aadhar_card;
 
 
 
@@ -120,5 +122,21 @@ public class EmployeeProfile {
 
     public void setCellphone_no(String cellphone_no) {
         this.cellphone_no = cellphone_no;
+    }
+
+    public String getPan_card() {
+        return pan_card;
+    }
+
+    public void setPan_card(String pan_card) {
+        this.pan_card = pan_card;
+    }
+
+    public String getAadhar_card() {
+        return aadhar_card;
+    }
+
+    public void setAadhar_card(String aadhar_card) {
+        this.aadhar_card = aadhar_card;
     }
 }

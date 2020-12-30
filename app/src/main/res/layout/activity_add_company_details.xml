@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/homebaground"/>
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logowhite" />
+
+        <RelativeLayout
+            android:id="@+id/rel_add_company_toggel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/margin_10">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/toggel" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_color_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_90"
+        android:background="@drawable/corner_white_home">
+
+
+        <RelativeLayout
+            android:id="@+id/rel_trans_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_profile"
+            android:layout_marginTop="@dimen/margin_20">
+
+            <LinearLayout
+                android:id="@+id/lin_pl_avi"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/corner_pl"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_add_total_meetings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Total Meetings"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size12" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+        <RelativeLayout
+        android:id="@+id/company_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_color_tab"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="Company Name" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_edit_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/company_name"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/border_blue"
+        android:layout_marginLeft="@dimen/margin_20">
+
+        <EditText
+            android:id="@+id/edit_company_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Type here"
+            android:textSize="14dp"
+            android:textCursorDrawable="@drawable/black_cursor"
+            android:background="@null"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:maxLines="1" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_edit_type"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="Services" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_type_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_services"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/border_blue"
+        android:layout_marginLeft="@dimen/margin_20">
+
+        <EditText
+            android:id="@+id/edit_services"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Type here"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/black_cursor"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="top"
+            android:background="@null" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_type_service"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="Address" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="(need proper address and pincode)" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_type_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_address"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/border_blue"
+        android:layout_marginLeft="@dimen/margin_20">
+
+       <EditText
+        android:id="@+id/edit_address"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:text=""
+        android:gravity="top"
+        android:hint="Type Here"
+        android:textSize="14dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_tem_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_type_address"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/margin_18"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="If any Team Members" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_any_team_member"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rel_tem_member"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/border_blue"
+        android:layout_marginLeft="@dimen/margin_20">
+
+        <TextView
+            android:id="@+id/txt_select_employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Select here"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_5" />
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="+"-->
+
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginRight="@dimen/margin_10" />-->
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_any_team_member"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/margin_18"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="Date" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_select_date"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rel_date"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/border_blue"
+        android:layout_marginLeft="@dimen/margin_20">
+
+        <TextView
+            android:id="@+id/txt_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Select date"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_5" />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rel_select_date">
+
+        <Button
+            android:id="@+id/btn_comapny_add"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/corner_button" />
+    </RelativeLayout>
+
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
+<!--    </android.support.v4.widget.NestedScrollView>-->
+<!--</RelativeLayout>-->

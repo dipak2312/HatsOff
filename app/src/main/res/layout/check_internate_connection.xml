@@ -103,25 +103,25 @@
 
         <RelativeLayout
             android:id="@+id/rel_ok"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/corner_button"
             android:layout_marginTop="@dimen/margin_30"
-            android:layout_below="@+id/t4"
-
-            >
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/t4">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:textSize="@dimen/text_size18"
-                android:layout_marginBottom="@dimen/margin_30"
-                android:textColor="@color/HOBlue"
+                android:textColor="@color/white"
                 android:text="OK"/>
 
 
         </RelativeLayout>
-
     </RelativeLayout>
 
 </LinearLayout>

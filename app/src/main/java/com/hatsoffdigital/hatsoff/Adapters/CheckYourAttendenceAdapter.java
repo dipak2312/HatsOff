@@ -1,7 +1,7 @@
 package com.hatsoffdigital.hatsoff.Adapters;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class CheckYourAttendenceAdapter extends RecyclerView.Adapter<CheckYourAttendenceAdapter.AttendenceViewHolder> {
 
@@ -51,6 +53,8 @@ public class CheckYourAttendenceAdapter extends RecyclerView.Adapter<CheckYourAt
         holder.attend_status.setText(attendanceDetails.get(position).getTotal_hours());
 
         String status=attendanceDetails.get(position).getStatus();
+
+        String count=attendanceDetails.get(position).getDate();
 
         if(status.equals("HALF"))
         {

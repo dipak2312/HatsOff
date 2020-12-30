@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="@dimen/margin_10"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="@dimen/margin_5"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lin_project_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.65">
+
+                <TextView
+                    android:id="@+id/txt_project_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Metropolice India"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="29 Jan,19"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_cat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_project_name"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.65">
+
+                <TextView
+                    android:id="@+id/txt_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Website Development"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/txt_coast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Rs45000/-"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_cat"
+            android:layout_marginTop="@dimen/margin_15">
+
+            <TextView
+                android:id="@+id/txt_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:fontFamily="@font/montserratregular"
+                android:text="hey this is demo nothing to at any else because this is a first testing line in this project please igonre all things"
+                android:textColor="@color/HOBlue"
+                android:textSize="12dp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_desc"
+            android:layout_marginTop="@dimen/margin_15">
+
+            <TextView
+                android:id="@+id/txt_bdm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:fontFamily="@font/montserratregular"
+                android:text=""
+                android:textColor="@color/HOBlue"
+                android:textSize="@dimen/text_size14" />
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_invoice_baground"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/rel_user_name"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            app:cardBackgroundColor="@color/green"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/text_invoice_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserratregular"
+                android:text="Approved"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size14" />
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/rel_delete_cancel_icon"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/rel_user_name">
+
+            <ImageView
+                android:id="@+id/img_delete_cancel_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

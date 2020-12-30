@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="Hello there," />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel_txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt1"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="Don't forget to share the MOM"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel_txt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt2"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="for the meeting."
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel_txt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt3"
+        android:layout_marginTop="@dimen/margin_15"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="15dp"
+            android:textColor="@color/HOBlue"
+            android:textStyle="bold"
+            android:text="GOOD LUCK FOR THE MEETING!"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+       
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_txt4"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin_20">
+
+        <Button
+            android:id="@+id/btn_okay"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Okay"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/corner_button"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

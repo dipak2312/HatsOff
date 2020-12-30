@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hats_off_black"
+    android:background="@color/HOBlue"
     tools:context=".Activity.Toggle.ToggleScreenActivity">
 
-    <android.support.v4.widget.NestedScrollView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,366 +16,140 @@
             android:layout_height="match_parent">
 
 
-
-    <RelativeLayout
-        android:id="@+id/top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_30">
-
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:src="@drawable/logowhite"
-            android:layout_centerHorizontal="true"/>
-
-
-        <ImageView
-            android:id="@+id/toggle_close"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_20"
-            android:src="@drawable/close"/>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/text_morning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/top_bar"
-        android:layout_marginTop="@dimen/margin_30">
-
-        <TextView
-            android:id="@+id/toggle_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size16"
-            android:text="SAGAR KOKARE"/>
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/text_empIid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_morning"
-      >
-
-        <TextView
-            android:id="@+id/toggle_emp_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size16"
-            android:text="HO28"/>
-
-
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:id="@+id/update_profile"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_30"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/text_empIid">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/updateprofyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/main_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
-                android:id="@+id/abc"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:textStyle="bold"
-                android:text="Update your profile"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
+                android:layout_marginTop="@dimen/margin_15">
 
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/howhite" />
 
-    <LinearLayout
-        android:id="@+id/toggle_attendance"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/update_profile">
+                <RelativeLayout
+                    android:id="@+id/rel_minus_toggel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_10">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/attendenceyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/minus" />
+
+                </RelativeLayout>
 
 
-        <LinearLayout
-
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:textStyle="bold"
-                android:text="Attendence"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
+            </RelativeLayout>
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Leavetrack"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/toggle_attendance">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/leaveyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_update_profile"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/top_bar"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginTop="170dp"
+                android:layout_marginRight="@dimen/margin_30"
+                android:background="@drawable/corner_white_button"
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:fontFamily="@font/youngserifregular"
+                    android:text="Update Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
 
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
+            </LinearLayout>
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:text="Leave Tracker"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/salary_toggel"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/Leavetrack">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/salaryyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_terms_cond"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/lin_update_profile"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_30"
+                android:background="@drawable/corner_white_button"
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:fontFamily="@font/youngserifregular"
+                    android:text="Terms And Conditions"
+                    android:textAllCaps="false"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
 
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:text="Salary"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_rete_this_app"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/lin_terms_cond"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_30"
+                android:background="@drawable/corner_white_button"
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:fontFamily="@font/youngserifregular"
+                    android:text="Rate This App"
+                    android:textAllCaps="false"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
 
-       <LinearLayout
-        android:id="@+id/holiday_toggel"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/salary_toggel">
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/holidayyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_contact_us"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/lin_rete_this_app"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_30"
+                android:background="@drawable/corner_white_button"
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:fontFamily="@font/youngserifregular"
+                    android:text="Feedback"
+                    android:textAllCaps="false"
+                    android:textColor="@color/HOBlue"
+                    android:textSize="@dimen/text_size14" />
 
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:text="Holiday"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:id="@+id/announc_toggel"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/corner_edit_text_yellow"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:layout_below="@+id/holiday_toggel">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_weight="0.4">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/announceyellow"
-                android:layout_gravity="right"
-                android:layout_marginRight="@dimen/margin_20" />
-        </LinearLayout>
-
-
-        <LinearLayout
-
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6">
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hats_off_yellow"
-                android:text="Announcements"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+            </LinearLayout>
 
 
         </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

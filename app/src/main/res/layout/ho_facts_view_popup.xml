@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rel_ho_facts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_10">
+
+        <TextView
+            android:id="@+id/txt_ho_facts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="this is our 5th office there are last cha three offis..hats off biggest large company">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_below="@+id/rel_ho_facts"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:background="@color/week_light_gray">
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

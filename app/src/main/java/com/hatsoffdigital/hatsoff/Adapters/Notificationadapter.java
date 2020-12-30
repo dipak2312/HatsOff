@@ -1,22 +1,23 @@
 package com.hatsoffdigital.hatsoff.Adapters;
-
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Color;
-import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
+
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+
 import android.widget.TextView;
+
 
 import com.hatsoffdigital.hatsoff.Models.Announcement_list;
 import com.hatsoffdigital.hatsoff.R;
 
 import java.util.ArrayList;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class Notificationadapter extends RecyclerView.Adapter<Notificationadapter.NotiViewHolder> {
 
@@ -41,6 +42,11 @@ public class Notificationadapter extends RecyclerView.Adapter<Notificationadapte
         holder.notification_desc.setText(AnnoucementList.get(position).getAnnouncement_desc());
         holder.noti_date1.setText(AnnoucementList.get(position).getAnnouncement_date());
 
+        String mystring="Read More";
+        SpannableString content = new SpannableString(mystring);
+        content.setSpan(new UnderlineSpan(), 0, mystring.length(), 0);
+        holder.read_more.setText(content);
+
     }
 
     @Override
@@ -63,30 +69,24 @@ public class Notificationadapter extends RecyclerView.Adapter<Notificationadapte
         @Override
         public void onClick(View view) {
 
-            AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
 
+            final Dialog popupdialog=new Dialog(context);
+            popupdialog.setContentView(R.layout.open_noti_popup);
+            popupdialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 
-            builder1.setMessage(AnnoucementList.get(getAdapterPosition()).getAnnouncement_desc());
+           TextView txt_notification=(TextView)popupdialog.findViewById(R.id.txt_notification);
+           txt_notification.setText(AnnoucementList.get(getAdapterPosition()).getAnnouncement_desc());
 
-            builder1.setCancelable(true);
+            Button btn_noti_okay=(Button)popupdialog.findViewById(R.id.btn_noti_okay);
+            btn_noti_okay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    popupdialog.cancel();
 
-            builder1.setPositiveButton(
-                    "ok",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+                }
+            });
 
-            AlertDialog alert11 = builder1.create();
-            alert11.show();
-            alert11.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
-
-            Button positiveButton = alert11.getButton(AlertDialog.BUTTON_POSITIVE);
-            LinearLayout parent = (LinearLayout) positiveButton.getParent();
-            parent.setGravity(Gravity.CENTER_HORIZONTAL);
-            View leftSpacer = parent.getChildAt(1);
-            leftSpacer.setVisibility(View.GONE);
+            popupdialog.show();
 
         }
     }

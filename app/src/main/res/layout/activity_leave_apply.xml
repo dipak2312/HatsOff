@@ -5,245 +5,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity.Leave.LeaveApplyActivity">
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
     <RelativeLayout
-        android:id="@+id/attend_logo"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="110dp">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/baground1"
-            android:scaleType="fitXY"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/homebaground"/>
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logowhite" />
 
         <RelativeLayout
-            android:id="@+id/top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_5">
-
-
-            <ImageView
-                android:layout_width="125dp"
-                android:layout_height="50dp"
-                android:src="@drawable/howhite"
-                android:layout_centerHorizontal="true"/>
-
+            android:id="@+id/rel_Leave_send_toggel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/margin_10">
 
             <ImageView
-                android:id="@+id/img_Leave_send_setting"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_20"
-                android:src="@drawable/toggel"/>
-
-            <ImageView
-                android:id="@+id/img_leave_send_back"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/margin_20"
-                android:src="@drawable/backblack"/>
+                android:layout_centerInParent="true"
+                android:src="@drawable/toggel" />
 
         </RelativeLayout>
-        <LinearLayout
-            android:id="@+id/lin_attendence"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/corner_white"
-            android:layout_marginTop="@dimen/margin_15"
-            android:layout_marginLeft="@dimen/margin_30"
-            android:layout_marginRight="@dimen/margin_30"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_below="@+id/top_bar">
-
-
-            <TextView
-                android:id="@+id/abc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:fontFamily="@font/youngserifregular"
-                android:text="Leave Tracker"
-                android:textAllCaps="false" />
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_toLeftOf="@+id/main_text"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:gravity="right"-->
-                <!--android:layout_weight="0.4">-->
-                <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:src="@drawable/leavetrack"-->
-                    <!--android:layout_marginRight="@dimen/margin_5" />-->
-            <!--</LinearLayout>-->
-
-            <!--<LinearLayout-->
-                <!--android:id="@+id/main_text"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_weight="0.6">-->
-                <!--<TextView-->
-                    <!--android:id="@+id/abc"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:textColor="@color/white"-->
-                    <!--android:fontFamily="@font/youngserifregular"-->
-                    <!--android:text="Leave Tracker"-->
-                    <!--android:textAllCaps="false" />-->
-
-            <!--</LinearLayout>-->
-
-
-
-        </LinearLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/text_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lin_attendence"
-            android:layout_marginTop="@dimen/margin_15">
-
-            <TextView
-                android:id="@+id/leave_apply_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/white"
-                android:fontFamily="@font/montserratregular"
-                android:textSize="@dimen/text_size14"
-                android:text="Saturday,29 September,18"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/text_main_section"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_date"
-            android:layout_marginTop="@dimen/margin_15"
-            android:layout_marginLeft="@dimen/margin_20"
-            android:layout_marginRight="@dimen/margin_20"
-            android:orientation="horizontal"
-            android:weightSum="1">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="0.5">
-                <TextView
-                    android:id="@+id/txt_el_available"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:fontFamily="@font/montserratregular"
-                    android:textSize="@dimen/text_size16"
-                    android:textColor="@color/white"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="EL Available"
-                    android:fontFamily="@font/montserratregular"
-                    android:textSize="@dimen/text_size14"
-                    android:textColor="@color/white"
-                    />
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Available"-->
-                    <!--android:fontFamily="@font/montserratregular"-->
-                    <!--android:textSize="@dimen/text_size14"-->
-                    <!--android:textColor="@color/white"-->
-                    <!--/>-->
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txt_pl_available"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="@dimen/text_size16"
-                    android:fontFamily="@font/montserratregular"
-                    android:textColor="@color/white" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PL Available"
-                    android:fontFamily="@font/montserratregular"
-                    android:textSize="@dimen/text_size14"
-                    android:textColor="@color/white" />
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Available"-->
-                    <!--android:fontFamily="@font/montserratregular"-->
-                    <!--android:textSize="@dimen/text_size14"-->
-                    <!--android:textColor="@color/white" />-->
-            </LinearLayout>
-
-
-
-
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_main_section"
-            android:layout_marginTop="4dp">
-
-            <ImageView
-                android:id="@+id/img_leave_inst"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/notiicon"
-                android:layout_marginRight="@dimen/margin_30"/>
-
-        </RelativeLayout>
-
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/attend_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_90"
+        android:background="@drawable/corner_white_home">
+
+
+        <RelativeLayout
+            android:id="@+id/rel_trans_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_profile"
+            android:layout_marginTop="@dimen/margin_30">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:gravity="end">
+
+
+                    <LinearLayout
+                        android:id="@+id/lin_el_avi"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/corner_avgtime"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_el_available"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="8"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size16" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="EL"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size12" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5">
+
+                    <LinearLayout
+                        android:id="@+id/lin_pl_avi"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/corner_avgtime"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_pl_available"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="20"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size16" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="PL"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size12" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/rel_radio_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/attend_logo"
-        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_50"
         android:layout_marginRight="@dimen/margin_25"
         android:layout_marginLeft="@dimen/margin_25">
 
@@ -309,13 +217,13 @@
             android:layout_height="42dp"
             android:layout_weight="0.45">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardElevation="4dp"
                 android:elevation="4dp"
                 android:layout_margin="6dp"
-                app:cardCornerRadius="@dimen/margin_15">
+                app:cardCornerRadius="@dimen/margin_5">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -339,7 +247,7 @@
                 android:layout_centerVertical="true"/>
 
             </RelativeLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
@@ -364,14 +272,14 @@
             android:layout_height="42dp"
             android:layout_weight="0.45">
 
-          <android.support.v7.widget.CardView
+          <androidx.cardview.widget.CardView
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               app:cardElevation="4dp"
               android:elevation="4dp"
               android:layout_margin="6dp"
 
-              app:cardCornerRadius="@dimen/margin_15">
+              app:cardCornerRadius="@dimen/margin_5">
 
               <RelativeLayout
                   android:layout_width="match_parent"
@@ -393,20 +301,20 @@
                 android:maxLines="1"
                 android:layout_centerVertical="true"/>
               </RelativeLayout>
-          </android.support.v7.widget.CardView>
+          </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
         </LinearLayout>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="90dp"
             android:layout_height="30dp"
             android:layout_below="@+id/lin_date"
             android:layout_centerInParent="true"
             app:cardElevation="4dp"
             android:layout_margin="7dp"
-            app:cardCornerRadius="15dp"
+            app:cardCornerRadius="5dp"
             android:elevation="4dp"
             android:layout_marginTop="@dimen/margin_10">
             <TextView
@@ -419,7 +327,7 @@
                 android:textSize="@dimen/text_size14"
                 android:text=" Days" />
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
         </RelativeLayout>
@@ -443,14 +351,14 @@
                     android:layout_height="42dp"
                     android:layout_weight="0.45">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:cardElevation="4dp"
                         android:elevation="4dp"
                         android:layout_margin="6dp"
 
-                        app:cardCornerRadius="@dimen/margin_15">
+                        app:cardCornerRadius="@dimen/margin_5">
 
 
 
@@ -490,7 +398,7 @@
 
                     </RelativeLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>
@@ -514,13 +422,13 @@
                     android:layout_height="42dp"
                     android:layout_weight="0.45">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:cardElevation="4dp"
                         android:elevation="4dp"
                         android:layout_margin="6dp"
-                        app:cardCornerRadius="@dimen/margin_15">
+                        app:cardCornerRadius="@dimen/margin_5">
 
 
                     <RelativeLayout
@@ -558,20 +466,20 @@
                             />
 
                     </RelativeLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="140dp"
                 android:layout_height="30dp"
                 android:layout_below="@+id/lin_date1"
                 android:layout_centerInParent="true"
                 app:cardElevation="4dp"
                 android:layout_margin="7dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="5dp"
                 android:elevation="4dp"
                 android:layout_marginTop="@dimen/margin_10">
 
@@ -598,7 +506,7 @@
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </RelativeLayout>
@@ -668,7 +576,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="@dimen/margin_5"
                 android:layout_marginBottom="@dimen/margin_5"
-                android:textColor="@color/black"
+                android:textColor="@color/HOBlue"
                 android:background="@null"
                 android:gravity="top"
                 android:hint="Type your Reason Here"
@@ -706,10 +614,7 @@
     </RelativeLayout>
 
 
-        </RelativeLayout>
 
-
-    </android.support.v4.widget.NestedScrollView>
 
 
 </RelativeLayout>

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity.home.HomeScreenActivity">
 
-
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,462 +17,823 @@
 
 
             <RelativeLayout
-                android:id="@+id/home_icon"
+                android:id="@+id/top_bar"
                 android:layout_width="match_parent"
-                android:layout_height="280dp">
+                android:layout_height="110dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/baground1" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/homebaground" />
+
+
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/logowhite" />
+
 
                 <RelativeLayout
-                    android:id="@+id/top_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_20">
-
-
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="50dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/logowhite" />
-
+                    android:id="@+id/rel_home_toggel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="@dimen/margin_10">
 
                     <ImageView
-                        android:id="@+id/toggel_img"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_20"
+                        android:layout_centerInParent="true"
                         android:src="@drawable/toggel" />
 
                 </RelativeLayout>
 
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/corner_white_home"
+
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_weight="0.23">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/user_profile_img"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+
+                        android:src="@drawable/user_info"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="1dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_35"
+
+                    android:layout_weight="0.77"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/text_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserratregular"
+                            android:maxLines="1"
+                            android:text="name"
+                            android:textColor="@color/HOBlue"
+                            android:textSize="@dimen/text_size18" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Saturday,05 Oct 2018"
+                            android:textColor="@color/HOBlue"
+                            android:textSize="@dimen/text_size14" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_trans_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_profile"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_8">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/top_bar"
-                    android:layout_marginTop="@dimen/margin_20"
                     android:orientation="horizontal"
                     android:weightSum="1">
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_20"
-                        android:layout_weight="0.2">
+                        android:layout_height="50dp"
+                        android:layout_weight="0.25">
 
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/user_profile_img"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/user_info"
-                            app:civ_border_color="@color/white"
-                            app:civ_border_width="1dp" />
+                        <LinearLayout
+                            android:id="@+id/lin_avgtime"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/corner_avgtime"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:id="@+id/text_average"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text="9.30"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size16" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text="Avg.Time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size12" />
+
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/lin"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_5"
-                        android:layout_marginTop="@dimen/margin_5"
-                        android:layout_weight="0.8"
-                        android:orientation="vertical">
+                        android:layout_height="50dp"
 
-                        <RelativeLayout
-                            android:id="@+id/text_name"
+                        android:layout_weight="0.25">
+
+                        <LinearLayout
+                            android:id="@+id/lin_experience"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/corner_experience"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/text_user_name"
+                                android:id="@+id/text_experience"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:ellipsize="end"
                                 android:fontFamily="@font/montserratregular"
-                                android:maxLines="1"
-                                android:text="name"
+                                android:text="5.6"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/text_size16" />
 
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rel_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
                             <TextView
-                                android:id="@+id/text_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/margin_5"
                                 android:fontFamily="@font/montserratregular"
-                                android:text="Saturday,05 Oct 2018"
+                                android:text="Experience"
                                 android:textColor="@color/white"
-                                android:textSize="@dimen/text_size14" />
-                        </RelativeLayout>
+                                android:textSize="@dimen/text_size12" />
 
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_5"
-                            android:orientation="horizontal"
-                            android:weightSum="1">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.4"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/text_experience"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/margin_5"
-                                    android:fontFamily="@font/montserratregular"
-                                    android:text=""
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size16" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/montserratregular"
-
-                                    android:text="Exp. at"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size14" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/montserratregular"
-
-                                    android:text="Hats-Off"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size14" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin_5"
-                                android:layout_weight="0.6"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/text_average"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/margin_5"
-                                    android:fontFamily="@font/montserratregular"
-                                    android:text=""
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size16" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/montserratregular"
-
-                                    android:text="Avg. time at"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size14" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/montserratregular"
-
-                                    android:text="Hats-Off"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_size14" />
-                            </LinearLayout>
 
                         </LinearLayout>
 
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0.25">
+
+                        <LinearLayout
+                            android:id="@+id/lin_emergency_leaves"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/corner_below_avgtime"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_el_available"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text="EL"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size12" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0.25">
+
+
+                        <LinearLayout
+                            android:id="@+id/lin_planned_leaves"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/corner_avgtime"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_pl_available"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size16" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratregular"
+                                android:text="PL"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size12" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
 
                 </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_all_leaves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel_trans_type"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginRight="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel_leave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratregular"
+                        android:text="Leaves"
+                        android:textColor="@color/HOBlue"
+                        android:textSize="@dimen/text_size14">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_toRightOf="@+id/rel_leave">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recy_all_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+                </RelativeLayout>
 
 
             </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/attend"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/home_icon"
-                android:layout_marginLeft="@dimen/margin_25"
-                android:layout_marginRight="@dimen/margin_25"
-                android:layout_marginTop="@dimen/margin_30"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_height="match_parent"
+                android:layout_below="@id/rel_all_leaves"
+                android:background="#f2f2f2">
 
-                <LinearLayout
-                    android:id="@+id/attendence"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:layout_toLeftOf="@+id/main_text"
-                    android:layout_weight="0.6"
-                    android:background="@drawable/rounded_rect_shape">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="@dimen/margin_12">
 
-                    <RelativeLayout
+
+                    <LinearLayout
+                        android:id="@+id/lin_first"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/margin_5">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        <ImageView
-                            android:id="@+id/img"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/attendblue" />
+                        <LinearLayout
+                            android:id="@+id/attendence"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="4dp"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:fontFamily="@font/montserratregular"
-                            android:text="Attendance"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
 
-                    </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/rel_attend"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="ATTENDANCE"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
 
-                <LinearLayout
-                    android:id="@+id/holiday"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_8"
-                    android:layout_weight="0.4"
-                    android:background="@drawable/rounded_rect_shape">
+                            </RelativeLayout>
 
-                    <RelativeLayout
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_attend"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/attendence" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/holiday"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_holiday"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="HOLIDAYS"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_holiday"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/holidays" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lin_second"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lin_first"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        <ImageView
-                            android:id="@+id/img1"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/holidayblue" />
+                        <LinearLayout
+                            android:id="@+id/lin_meeting"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img1"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:fontFamily="@font/montserratregular"
-                            android:text="Holiday"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                            <RelativeLayout
+                                android:id="@+id/rel_meetings"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                    </RelativeLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="MEETINGS"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
 
-                </LinearLayout>
+                            </RelativeLayout>
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/lin_second"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/attend"
-                android:layout_marginLeft="@dimen/margin_25"
-                android:layout_marginRight="@dimen/margin_25"
-                android:layout_marginTop="@dimen/margin_8"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_meetings"
+                                android:layout_marginTop="@dimen/margin_5">
 
-                <LinearLayout
-                    android:id="@+id/salary"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:layout_toLeftOf="@+id/main_text"
-                    android:layout_weight="0.4"
-                    android:background="@drawable/rounded_rect_shape">
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
 
-                    <RelativeLayout
+                                    android:src="@drawable/meeting" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/notification"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_notifications"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="NOTIFICATIONS"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_notifications"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/notifications" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lin_third"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lin_second"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        <ImageView
-                            android:id="@+id/img2"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/salaryblue" />
+                        <LinearLayout
+                            android:id="@+id/lin_wfh"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img2"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:fontFamily="@font/montserratregular"
-                            android:text="Salary"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                            <RelativeLayout
+                                android:id="@+id/rel_work_from_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                    </RelativeLayout>
-                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="WORK FROM HOME"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
 
-                <LinearLayout
-                    android:id="@+id/notification"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_8"
-                    android:layout_weight="0.6"
-                    android:background="@drawable/rounded_rect_shape">
+                            </RelativeLayout>
 
-                    <RelativeLayout
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_work_from_home"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/workfromhome" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/leavetracker"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_leave_tracker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="LEAVE TRACKER"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_leave_tracker"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/leavetracker" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lin_third"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        <ImageView
-                            android:id="@+id/img3"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/notiblue" />
+                        <LinearLayout
+                            android:id="@+id/lin_ho_facts"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img3"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:fontFamily="@font/montserratregular"
-                            android:text="Announcements"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                            <RelativeLayout
+                                android:id="@+id/rel_ho_fact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                    </RelativeLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="HO FACTS"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
 
-                </LinearLayout>
+                            </RelativeLayout>
 
 
-            </LinearLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_ho_fact"
+                                android:layout_marginTop="@dimen/margin_5">
+
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:src="@drawable/fact" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_request_invoice"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/corner_home_white"
+                            android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/lin_second"
-                android:layout_marginLeft="@dimen/margin_25"
-                android:layout_marginRight="@dimen/margin_25"
-                android:layout_marginTop="@dimen/margin_8"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                            <RelativeLayout
+                                android:id="@+id/rel_request_invoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/lin_reimbur"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:layout_toLeftOf="@+id/main_text"
-                    android:layout_weight="0.6"
-                    android:background="@drawable/rounded_rect_shape">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:fontFamily="@font/montserratregular"
+                                    android:text="REQUEST INVOICE"
+                                    android:textColor="@color/HOBlue"
+                                    android:textSize="@dimen/text_size14" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                            </RelativeLayout>
 
-                        <ImageView
-                            android:id="@+id/img4"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/reimbblue" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img4"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:fontFamily="@font/montserratregular"
-                            android:text="Reimbursement"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rel_request_invoice">
 
-                    </RelativeLayout>
-                </LinearLayout>
+                                <ImageView
+                                    android:layout_width="85dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/requestinnovice" />
 
-                <LinearLayout
-                    android:id="@+id/leavetracker"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_8"
-                    android:layout_weight="0.4"
-                    android:background="@drawable/rounded_rect_shape">
+                            </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/img5"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_10"
-                            android:src="@drawable/leaveblue" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/img5"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="@dimen/margin_8"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/montserratregular"
-                            android:maxLines="1"
-                            android:text="Leave Tracker"
-                            android:textColor="@color/HOBlue"
-                            android:textSize="14dp" />
+                    </LinearLayout>
 
-                    </RelativeLayout>
-                </LinearLayout>
 
-            </LinearLayout>
-
+                </RelativeLayout>
+            </RelativeLayout>
 
         </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rel_ho_facts"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/close_ho_facts"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/closeimg" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/btmview" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/youngserifregular"
+            android:text="HO Facts"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/txt_ho_facts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginRight="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserratregular"
+            android:maxLines="4"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size14" />
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
 

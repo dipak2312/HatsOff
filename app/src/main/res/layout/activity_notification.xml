@@ -1,177 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity.Notification.NotificationActivity">
 
-
-    <RelativeLayout
-        android:id="@+id/icon"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="220dp">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/baground1"/>
+        android:layout_height="match_parent">
 
         <RelativeLayout
-        android:id="@+id/top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_5">
-
-
-        <ImageView
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:src="@drawable/howhite"
-        android:layout_centerHorizontal="true"/>
-
-
-        <ImageView
-        android:id="@+id/notification_toggle_img"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/margin_20"
-        android:src="@drawable/toggel"/>
-
-        <ImageView
-        android:id="@+id/notification_close_img"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/margin_20"
-        android:src="@drawable/backblack"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-        android:id="@+id/lin_attendence"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/corner_white"
-        android:layout_marginTop="@dimen/margin_15"
-        android:layout_marginLeft="@dimen/margin_30"
-        android:layout_marginRight="@dimen/margin_30"
-        android:orientation="horizontal"
-       android:gravity="center"
-        android:layout_below="@+id/top_bar">
-
-
-            <TextView
-                android:id="@+id/abc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:layout_marginLeft="@dimen/margin_5"
-                android:fontFamily="@font/youngserifregular"
-                android:text="Announcement"
-                android:textAllCaps="false" />
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_toLeftOf="@+id/main_text"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:gravity="right"-->
-        <!--android:layout_weight="0.4">-->
-        <!--<ImageView-->
-        <!--android:layout_width="20dp"-->
-        <!--android:layout_height="20dp"-->
-        <!--android:src="@drawable/announcements"-->
-        <!--/>-->
-        <!--</LinearLayout>-->
-
-        <!--<LinearLayout-->
-        <!--android:id="@+id/main_text"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_weight="0.6">-->
-        <!--<TextView-->
-        <!--android:id="@+id/abc"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textColor="@color/white"-->
-        <!--android:layout_marginLeft="@dimen/margin_5"-->
-        <!--android:fontFamily="@font/youngserifregular"-->
-        <!--android:text="Announcement"-->
-        <!--android:textAllCaps="false" />-->
-
-        <!--</LinearLayout>-->
-
-
-
-        </LinearLayout>
-
-
-        <RelativeLayout
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lin_attendence"
-        android:layout_marginTop="@dimen/margin_10">
-
-        <TextView
-        android:id="@+id/noti_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserratregular"
-        android:textSize="@dimen/text_size14"
-        android:text="Saturday,29 September,18"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/date"
-            android:layout_marginTop="2dp">
-
-            <ImageView
-                android:id="@+id/noti_inst_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/notiicon"
-                android:layout_marginRight="@dimen/margin_30"/>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/icon"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:layout_marginRight="@dimen/margin_10"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="@dimen/margin_15">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rec_show_notification"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <RelativeLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="110dp">
 
-        </android.support.v7.widget.RecyclerView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/homebaground" />
+
+                <ImageView
+                    android:id="@+id/img_noti_back"
+                    android:layout_width="125dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/logowhite" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_notification_toggel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="@dimen/margin_10">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/toggel" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_90"
+                android:background="@drawable/corner_white_home">
 
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rec_show_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </RelativeLayout>
+
+
+

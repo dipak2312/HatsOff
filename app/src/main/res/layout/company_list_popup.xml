@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_8"
+    android:layout_marginRight="@dimen/margin_8"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="@dimen/margin_5"
+    app:cardElevation="4dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+
+
+
+    <RelativeLayout
+        android:id="@+id/txt_current_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10">
+
+        <androidx.cardview.widget.CardView
+
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        android:layout_margin="7dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/HOBlue"
+            android:fontFamily="@font/montserratregular"
+            android:text="29/01/2018"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/HOBlue"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/montserratregular"
+            android:text="4:30 PM"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin_com_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_current_date"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="0.3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_size14"
+                android:textColor="@color/HOBlue"
+                android:fontFamily="@font/montserratregular"
+                android:text="Meeting with : "/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_weight="0.7">
+
+            <TextView
+                android:id="@+id/txt_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_size14"
+                android:textColor="@color/HOBlue"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserratregular"
+                android:text="h"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_com_name"
+            android:layout_marginTop="@dimen/margin_5">
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@drawable/stright_dash_line"
+                android:layout_height="2dp">
+
+            </View>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_view1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="0.3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Address : "/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/txt_company_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="h"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_address"
+            android:layout_marginTop="@dimen/margin_5">
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@drawable/stright_dash_line"
+                android:layout_height="2dp">
+
+            </View>
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/lin_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_view2"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="0.3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Service : "/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/txt_company_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="h"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_service"
+            android:layout_marginTop="@dimen/margin_5">
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@drawable/stright_dash_line"
+                android:layout_height="2dp">
+
+            </View>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_view3"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="0.3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Team : "/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/txt_company_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size14"
+                    android:textColor="@color/HOBlue"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="h"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

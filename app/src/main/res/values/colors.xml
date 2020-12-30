@@ -24,8 +24,8 @@
     <color name="text_gray">#585858</color>
     <color name="field_bottom_color">#840053</color>
     <color name="lightgray">#868282</color>
-    <color name="red">#990000</color>
-    <color name="green">#009900</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
     <color name="blue">#000099</color>
     <color name="fentpurple">#CD6F65EC</color>
     <color name="light_blue">#d90303ff</color>
@@ -36,6 +36,8 @@
     <color name="week_light_gray">#c1bfbf</color>
     <color name="medium_light_gray">#a4a3a3</color>
 
+
+
     <!--social media color-->
     <color name="color_facebook">#3B5998</color>
     <color name="color_linkedIn">#0077B5</color>
@@ -43,6 +45,8 @@
 
     <color name="hats_off_yellow">#FED420</color>
     <color name="hats_off_black">#2C2C2C</color>
+
+    <color name="ho_marun">#78200b</color>
 
 
 

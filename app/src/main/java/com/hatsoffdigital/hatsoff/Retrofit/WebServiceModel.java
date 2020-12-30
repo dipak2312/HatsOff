@@ -10,7 +10,7 @@ public class WebServiceModel {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://hatsoffdigital.in/")
+                .baseUrl("https://hatsoffdigital.in/app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
@@ -19,5 +19,4 @@ public class WebServiceModel {
         return restApis;
 
     }
-
 }

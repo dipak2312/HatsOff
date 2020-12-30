@@ -1,46 +1,51 @@
 package com.hatsoffdigital.hatsoff.Activity.Attendence;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.budiyev.android.codescanner.AutoFocusMode;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.budiyev.android.codescanner.ScanMode;
 import com.google.zxing.Result;
-import com.hatsoffdigital.hatsoff.Activity.Profile.UpdateProfileActivity;
+import com.hatsoffdigital.hatsoff.Activity.Toggle.ToggleScreenActivity;
+import com.hatsoffdigital.hatsoff.Activity.home.HomeScreenActivity;
 import com.hatsoffdigital.hatsoff.Helper.SPManager;
 import com.hatsoffdigital.hatsoff.Models.ScanDateTime;
 import com.hatsoffdigital.hatsoff.R;
 import com.hatsoffdigital.hatsoff.Retrofit.WebServiceModel;
+import com.hatsoffdigital.hatsoff.Utils.CheckInternetBroadcast;
 import com.hatsoffdigital.hatsoff.Utils.CustomProgressDialog;
 import com.hatsoffdigital.hatsoff.Utils.NetworkPopup;
+import com.hatsoffdigital.hatsoff.Utils.ServerPopup;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
+
 
 public class ScanAttendenceActivity extends AppCompatActivity implements View.OnClickListener {
 
     Context context;
-    ImageView scan_close_img, scan_toggel_img;
-    ZXingScannerView mScannerView;
-    TextView scan_date;
+
+    RelativeLayout rel_scan_toggle;
+    ImageView img_scan_home;
+
+
     CustomProgressDialog dialog;
     SPManager spManager;
     private CodeScanner mCodeScanner;
@@ -58,42 +63,22 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
         dialog = new CustomProgressDialog(context);
         spManager = new SPManager(context);
 
-//        mScannerView = (ZXingScannerView) findViewById(R.id.zx_view);
-//        mScannerView.setAspectTolerance(0.5f);
+        rel_scan_toggle = (RelativeLayout) findViewById(R.id.rel_scan_toggle);
+        rel_scan_toggle.setOnClickListener(this);
 
-
-        scan_toggel_img = (ImageView) findViewById(R.id.scan_toggel_img);
-        scan_toggel_img.setOnClickListener(this);
-
-        scan_close_img = (ImageView) findViewById(R.id.scan_close_img);
-        scan_close_img.setOnClickListener(this);
-
-        scan_date = (TextView) findViewById(R.id.scan_date);
-
-        Calendar now = Calendar.getInstance();
-        int year = now.get(Calendar.YEAR);
-        int month = now.get(Calendar.MONTH) + 1; // Note: zero based!
-        int day = now.get(Calendar.DAY_OF_MONTH);
-        String inputDateStr = String.format("%s/%s/%s", day, month, year);
-        Date inputDate = null;
-        try {
-            inputDate = new SimpleDateFormat("dd/MM/yyyy").parse(inputDateStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(inputDate);
-        String dayOfWeek = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US);
-        String dayOfMonth = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US);
-
-        String date = dayOfWeek + "," + " " + day + " " + dayOfMonth + "," + " " + year;
-        scan_date.setText(date);
-
+        img_scan_home=(ImageView)findViewById(R.id.img_scan_home);
+        img_scan_home.setOnClickListener(this);
 
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
 
         mCodeScanner = new CodeScanner(this, scannerView);
-        //mCodeScanner.setCamera(1);
+        // mCodeScanner.setCamera(1);
+
+
+        mCodeScanner.setAutoFocusEnabled(true);
+        mCodeScanner.setScanMode(ScanMode.SINGLE);
+        mCodeScanner.setTouchFocusEnabled(true);
+        mCodeScanner.setAutoFocusMode(AutoFocusMode.SAFE);
 
         mCodeScanner.startPreview();
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
@@ -131,29 +116,8 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
     public void onResume() {
         super.onResume();
 
-
         mCodeScanner.startPreview();
-//        mScannerView.startCamera();
-//        mScannerView.setResultHandler(new ZXingScannerView.ResultHandler() {
-//            @Override
-//            public void handleResult(Result result) {
-//
-//                if(result.getText().equals("Hats Off"))
-//                {
-//
-//                     mScannerView.stopCamera();
-//                     getScanData();
-//
-//                }
-//                else
-//                {
-//
-//                    Toast.makeText(context,"Wrong QR Code",Toast.LENGTH_SHORT).show();
-//                }
-//
-//                mScannerView.resumeCameraPreview(this);
-//            }
-//        });
+
 
     }
 
@@ -179,25 +143,39 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
                             String time = scanDateTime.getTime();
                             String hours = scanDateTime.getHours();
                             String late = scanDateTime.getLate();
+                            String early = scanDateTime.getEarly();
+                            String half_day_metting_status = scanDateTime.getHalf_day_or_meeting();
 
                             if (in_time.equals("")) {
-                                Intent intent = new Intent(context, SuccessScanAttendActivity.class);
-                                intent.putExtra("IN", in_time);
-                                intent.putExtra("OUT", out_time);
-                                intent.putExtra("TIME", time);
-                                intent.putExtra("Hours", hours);
-                                intent.putExtra("Late", late);
-                                startActivity(intent);
-                                finish();
+
+                                if (early.equals("yes")) {
+                                    Earlypopup();
+
+                                } else {
+                                    Intent intent = new Intent(context, SuccessScanAttendActivity.class);
+                                    intent.putExtra("IN", in_time);
+                                    intent.putExtra("OUT", out_time);
+                                    intent.putExtra("TIME", time);
+                                    intent.putExtra("Hours", hours);
+                                    intent.putExtra("Late", late);
+                                    intent.putExtra("MettingHalfStatus", half_day_metting_status);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             } else if (out_time.equals("")) {
+
                                 Intent intent = new Intent(context, SuccessScanAttendActivity.class);
                                 intent.putExtra("IN", in_time);
                                 intent.putExtra("OUT", out_time);
                                 intent.putExtra("TIME", time);
                                 intent.putExtra("Hours", hours);
                                 intent.putExtra("Late", late);
+                                intent.putExtra("MettingHalfStatus", half_day_metting_status);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                 startActivity(intent);
                                 finish();
+
                             } else {
                                 ScanAttendenceMessage();
 
@@ -209,8 +187,22 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
 
                     @Override
                     public void onError(Throwable e) {
-                        dialog.dismiss(" ");
-                        NetworkPopup.ShowPopup(context);
+//                        dialog.dismiss(" ");
+//                        NetworkPopup.ShowPopup(context);
+
+                        if(CheckInternetBroadcast.isNetworkAvilable(context))
+                        {
+                            ServerPopup.showPopup(context);
+                            dialog.dismiss(" ");
+                        }
+                        else
+                        {
+                            NetworkPopup.ShowPopup(context);
+                            dialog.dismiss(" ");
+
+
+                        }
+
                         //Toast.makeText(context,"Please Check Your Network..Unable to Connect Server!!",Toast.LENGTH_SHORT).show();
 
 
@@ -223,6 +215,24 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
                 });
 
 
+    }
+
+    private void Earlypopup() {
+
+        final Dialog popupdialog = new Dialog(context);
+        popupdialog.setContentView(R.layout.early_popup);
+        popupdialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        Button btn_okay = (Button) popupdialog.findViewById(R.id.early_btn_okay);
+        btn_okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupdialog.cancel();
+                finish();
+            }
+        });
+
+        popupdialog.show();
     }
 
     private void ScanAttendenceMessage() {
@@ -238,6 +248,7 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+                        finish();
                     }
                 });
 
@@ -246,6 +257,7 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+                        finish();
                     }
                 });
 
@@ -257,8 +269,6 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
     @Override
     public void onPause() {
         super.onPause();
-        //mScannerView.stopCamera();
-        // Stop camera on pause
 
         mCodeScanner.releaseResources();
     }
@@ -268,12 +278,19 @@ public class ScanAttendenceActivity extends AppCompatActivity implements View.On
 
         int id = view.getId();
 
-        if (id == scan_toggel_img.getId()) {
-            Intent intent = new Intent(context, UpdateProfileActivity.class);
+        if (id == rel_scan_toggle.getId()) {
+            Intent intent = new Intent(context, ToggleScreenActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
-        } else if (id == scan_close_img.getId()) {
+        }
+        else if(id==img_scan_home.getId())
+        {
+            Intent intent = new Intent(context, HomeScreenActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }
+
 
     }
 }

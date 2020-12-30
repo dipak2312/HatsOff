@@ -4,4 +4,5 @@
     <string name="default_notification_channel_id">my_channel_01</string>
 
     <string name="app_images_folderName">Hats-Off</string>
+    <string name="WFH_text">Now on every employee is only eligible for 1 WFH per month that to if its a genuine case and the reason seems appropriate and approved by management. Although one can apply for more then 1 WFH but the remuneration will be adjusted as per the co. terms.</string>
 </resources>

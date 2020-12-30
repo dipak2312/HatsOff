@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.Meeting.MeetingActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/homebaground"/>
+
+        <ImageView
+            android:id="@id/img_meeting_back"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logowhite" />
+
+        <RelativeLayout
+            android:id="@+id/rel_metting_toggel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/margin_10">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/toggel" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_color_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_90"
+        android:background="@drawable/corner_white_home">
+
+
+        <RelativeLayout
+            android:id="@+id/rel_trans_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_profile"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_marginRight="@dimen/margin_30"
+            android:layout_marginTop="@dimen/margin_20">
+
+
+            <LinearLayout
+                android:id="@+id/lin_pl_avi"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/corner_pl"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_total_meetings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Total Meetings"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size12" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_outside_pune"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rel_color_tab"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/margin_30"
+        android:background="@drawable/corner_button"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:fontFamily="@font/youngserifregular"
+            android:text="Meeting"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size14" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lin_outside_pune"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_15"
+        android:background="@color/HOBlue">
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_line"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_meeting_his"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
