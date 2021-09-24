@@ -701,7 +701,9 @@ public class HomeScreenActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onResume() {
         super.onResume();
+
         user_name = spManager.getName();
+
         getTimeFromAndroid();
         String name = "Hey " + user_name + "!!  " + date_time;
         text_user_name.setText(name);
@@ -931,6 +933,11 @@ public class HomeScreenActivity extends AppCompatActivity implements View.OnClic
                                 }
 
                                 String average = getaverageTime.getAverageTime();
+                                if(average.equals("NANhr NANm"))
+                                {
+                                    average="0hr 0m";
+                                }
+
                                 text_average.setText(average);
                                 spManager.setAverage_time(average);
 
@@ -1220,6 +1227,7 @@ public class HomeScreenActivity extends AppCompatActivity implements View.OnClic
 
         } else if (id == lin_request_invoice.getId()) {
             if (userNotFound.equals("present")) {
+
 
                 if (invoice.equals("yes")) {
 

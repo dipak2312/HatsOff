@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.hatsoffdigital.hatsoff.Activity.Profile.UpdateProfileActivity;
 import com.hatsoffdigital.hatsoff.R;
+import com.mindorks.paracamera.Camera;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,7 +31,7 @@ public class ImagePickUtils {
 
     private static final int SELECT_FILE = 2754;
 
-    public static void selectImage(final Context context) {
+    public static void selectImage(final Context context, Camera camera) {
 
        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -37,7 +39,7 @@ public class ImagePickUtils {
         dialogBuilder.setView(dialogView);
 
         //TextView title = (TextView) dialogView.findViewById(R.id.textView1);
-        final Button camera = (Button) dialogView.findViewById(R.id.select_image_dialog_btn_camera_btn);
+        final Button camera1 = (Button) dialogView.findViewById(R.id.select_image_dialog_btn_camera_btn);
         Button gallery = (Button) dialogView.findViewById(R.id.select_image_dialog_btn_gallery_btn);
         Button btnCancel = (Button) dialogView.findViewById(R.id.select_image_dialog_close_btn);
 
@@ -45,11 +47,11 @@ public class ImagePickUtils {
         b.show();
 
 
-        camera.setOnClickListener(new View.OnClickListener() {
+        camera1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                CameraIntent(context);
+                CameraIntent(context,camera);
                 b.dismiss();
 
             }
@@ -95,14 +97,24 @@ public class ImagePickUtils {
         }
     }
 
-    private static void CameraIntent(Context context) {
+    private static void CameraIntent(Context context,Camera camera) {
 
-        Activity activity = (Activity) context;
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        Activity activity = (Activity) context;
 
 
-        activity.startActivityForResult(intent, REQUEST_CAMERA);
+        try {
+            camera.takePicture();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+//
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//
+//        activity.startActivityForResult(intent, REQUEST_CAMERA);
+
+//        UpdateProfileActivity activity=new UpdateProfileActivity();
+//        activity.openCamera();
 
 
     }

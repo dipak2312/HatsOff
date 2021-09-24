@@ -21,7 +21,9 @@
         android:roundIcon="@mipmap/hoappicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Invoice.InvoiceAdminActivity"></activity>
+        <activity android:name=".Activity.Invoice.InvoiceAdminActivity">
+
+        </activity>
         <activity
             android:name=".Activity.Invoice.InvoiceApplyActivity"
             android:screenOrientation="portrait"></activity>

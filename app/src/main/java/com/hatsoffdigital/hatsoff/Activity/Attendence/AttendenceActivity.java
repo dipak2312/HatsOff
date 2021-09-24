@@ -222,6 +222,13 @@ public class AttendenceActivity extends AppCompatActivity implements View.OnClic
                             }
 
 
+                            if(getaverageTime.getAverageTime().equals("NANhr NANm"))
+                            {
+                                spManager.setAverage_time("0hr 0m");
+                            }
+
+
+
                             txt_average.setText(spManager.getAverage_time());
 
 

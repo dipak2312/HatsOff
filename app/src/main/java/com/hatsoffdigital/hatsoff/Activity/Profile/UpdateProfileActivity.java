@@ -31,9 +31,11 @@ import com.hatsoffdigital.hatsoff.Utils.CustomProgressDialog;
 import com.hatsoffdigital.hatsoff.Utils.ImagePickUtils;
 import com.hatsoffdigital.hatsoff.Utils.NetworkPopup;
 import com.hatsoffdigital.hatsoff.Utils.ServerPopup;
+import com.mindorks.paracamera.Camera;
 import com.tsongkha.spinnerdatepicker.DatePicker;
 import com.tsongkha.spinnerdatepicker.DatePickerDialog;
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
+import com.hatsoffdigital.hatsoff.Utils.cameraOpen;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -55,6 +57,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class UpdateProfileActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
     Context context;
+    Camera camera;
     //ImageView profile_back_img,profile_close_img;
     RelativeLayout rel_profile_toggel;
     EditText edit_firstname, edit_lastname, edit_mobileno, edit_email, edit_bloodgroup, edit_address, edit_pan, edit_adhar;
@@ -139,6 +142,16 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
 
         Intent intent = getIntent();
         loginStatus= getIntent().getStringExtra("LoginScreen");
+
+        camera = new Camera.Builder()
+                .resetToCorrectOrientation(true)// it will rotate the camera bitmap to the correct orientation from meta data
+                .setTakePhotoRequestCode(1)
+                .setDirectory("ho")
+                .setName("ho_" + System.currentTimeMillis())
+                .setImageFormat(Camera.IMAGE_JPEG)
+                .setCompression(75)
+                .setImageHeight(1000)// it will try to achieve this height as close as possible maintaining the aspect ratio;
+                .build(this);
 
         if(loginStatus ==null)
         {
@@ -268,7 +281,7 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
             ShowDatePopup();
             dateformat = "2";
         } else if (id == circle_profile_img.getId()) {
-            ImagePickUtils.selectImage(context);
+            ImagePickUtils.selectImage(context,camera);
         } else if (id == btn_submit.getId()) {
 
             if (edit_firstname.getText().toString().trim().equalsIgnoreCase("")) {
@@ -449,25 +462,37 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
 
             }
 
-        } else if (requestCode == REQUEST_CAMERA) {
-            if (data != null) {
-                Bundle extras = data.getExtras();
-                Bitmap thePic = (Bitmap) extras.get("data");
-                text_plus.setText("");
-                circle_profile_img.setImageBitmap(null);
-                circle_profile_img.setImageBitmap(thePic);
+        } else if (requestCode == Camera.REQUEST_TAKE_PHOTO) {
+//            if (data != null) {
+//                Bundle extras = data.getExtras();
+//                Bitmap thePic = (Bitmap) extras.get("data");
+//                text_plus.setText("");
+//                circle_profile_img.setImageBitmap(null);
+//                circle_profile_img.setImageBitmap(thePic);
+//
+//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                thePic.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+//                byte[] b = baos.toByteArray();
+//                encodedImage = android.util.Base64.encodeToString(b, android.util.Base64.DEFAULT);
+//                // System.out.println("encoded"+encodedImage);
+//
+//            }
 
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                thePic.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                byte[] b = baos.toByteArray();
-                encodedImage = android.util.Base64.encodeToString(b, android.util.Base64.DEFAULT);
-                // System.out.println("encoded"+encodedImage);
 
+            if(requestCode == Camera.REQUEST_TAKE_PHOTO) {
+                Bitmap bitmap = camera.getCameraBitmap();
+                if (bitmap != null) {
+                    //picFrame.setImageBitmap(bitmap);
+                } else {
+                    Toast.makeText(this.getApplicationContext(), "Picture not taken!", Toast.LENGTH_SHORT).show();
+                }
             }
 
 
         }
     }
+
+
 
     private void ShowDatePopup() {
 
@@ -505,4 +530,9 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
 
 
     }
+
+
+
+
+
 }

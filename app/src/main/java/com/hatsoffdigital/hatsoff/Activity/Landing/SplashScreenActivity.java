@@ -25,6 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             if (!isFinishing()) {
                 mHandler.removeCallbacks(this);
 
+
                 if (SpManager.getLoggedIn().equals("Login")) {
 
                     getuserLogin();
